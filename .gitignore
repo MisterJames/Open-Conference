@@ -1,0 +1,8 @@
+*.suo
+packages
+bin
+obj
+*.psd
+*.user
+Thumbs.db
+SubmissionInfo

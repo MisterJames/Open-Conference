@@ -1,0 +1,107 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" 
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:maps="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps" xmlns:System_Device_Location="clr-namespace:System.Device.Location;assembly=System.Device"
+    x:Class="Prdc.Conference.VenuePage"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+ 
+<!--Sample code showing usage of ApplicationBar--><!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+        	<RowDefinition Height="Auto"/>
+        	<RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+    	<controls:Pivot Margin="0" Title="PRAIRIE DEV CON">
+    		<controls:PivotItem Header="venue">
+    			<Grid>
+    				<ScrollViewer x:Name="ContentPanel" VerticalAlignment="Bottom" >
+    					<StackPanel Orientation="Vertical" Width="456">
+    						<TextBlock TextWrapping="Wrap" Text="Winnipeg, Manitoba" d:LayoutOverrides="Width" FontSize="40">
+    							<TextBlock.Foreground>
+    								<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+    							</TextBlock.Foreground>
+    						</TextBlock>
+    						<TextBlock TextWrapping="Wrap" Text="Winnipeg is the capital city of the province of Manitoba. Winnipeg has a diverse population, reflected in the rich culture found within the city. Music and entertainment festivals run year round, and the city is also home to the Winnipeg Blue Bombers CFL team and the Winnipeg Jets NHL franchise." Margin="23,0,28,0">
+    							<TextBlock.Foreground>
+    								<SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+    							</TextBlock.Foreground>
+    						</TextBlock>
+    						<TextBlock TextWrapping="Wrap" Text="The Viscount Gort" FontSize="40" Margin="1,10,0,0">
+    							<TextBlock.Foreground>
+    								<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+    							</TextBlock.Foreground>
+    						</TextBlock>
+    						<TextBlock TextWrapping="Wrap" Text="The Prairie Developer Conference will be held at the Viscount Gort Hotel and Conference Centre! It's close to the Polo Park shopping centre, various restaurants, theatres, and the airport." Margin="23,0,28,46">
+    							<TextBlock.Foreground>
+    								<SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+    							</TextBlock.Foreground>
+    						</TextBlock>
+    						<Path Data="M130,273" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="0" Margin="130,0,0,0" Stretch="Fill" Stroke="Black" UseLayoutRounding="False" Width="0"/>
+    					</StackPanel>
+    				</ScrollViewer>
+    			</Grid>
+    		</controls:PivotItem>
+    		<controls:PivotItem Header="area">
+    			<Grid>
+                    <maps:Map Margin="0" d:LayoutOverrides="Width, Height" ZoomLevel="15" Name="mapArea">
+                    	<maps:Map.Center>
+                            <System_Device_Location:GeoCoordinate Altitude="NaN" Course="NaN" HorizontalAccuracy="NaN" Longitude="-97.204221" Latitude="49.879676" Speed="NaN" VerticalAccuracy="NaN"/>
+                    	</maps:Map.Center>
+                        <maps:Map.CredentialsProvider>
+                            <maps:ApplicationIdCredentialsProvider ApplicationId="AkM6LtTeHlGFBN1kqZ6pT_AsPW1jp3tQ27FJlRzeRD3LrsZgMmXZeWV0I8M4muiN" />
+                        </maps:Map.CredentialsProvider>
+                    </maps:Map>
+                </Grid>
+    		</controls:PivotItem>
+    	</controls:Pivot>
+    </Grid>
+
+    
+</phone:PhoneApplicationPage>
