@@ -28,7 +28,7 @@ namespace Prdc.Conference
 
             mapArea.Center = new GeoCoordinate(49.879738, -97.203598);
             Image pinImage = new Image();
-            pinImage.Source = new BitmapImage(new Uri("images/prairiedevconpin.png", UriKind.Relative));
+            pinImage.Source = new BitmapImage(new Uri("/images/prairiedevconpin.png", UriKind.Relative));
             pinImage.Stretch = Stretch.None;
             PositionOrigin origin = PositionOrigin.BottomCenter;
 

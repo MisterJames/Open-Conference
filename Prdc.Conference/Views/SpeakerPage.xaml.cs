@@ -29,7 +29,7 @@ namespace Prdc.Conference
                     vm.SendSessionNavigatingMessage(session.Session);
                     ListBox listbox = sender as ListBox;
                     listbox.SelectedIndex = -1;
-                    NavigationService.Navigate(new System.Uri("/SessionPage.xaml", System.UriKind.Relative));
+                    NavigationService.Navigate(new System.Uri("/Views/SessionPage.xaml", System.UriKind.Relative));
                 }
             }
         }

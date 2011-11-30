@@ -103,7 +103,7 @@
 							<SolidColorBrush Color="{StaticResource PhoneContrastBackgroundColor}"/>
 						</TextBlock.Foreground>
 					</TextBlock>
-					<ListBox ItemContainerStyle="{StaticResource ListBoxItemStyle1}" ItemTemplate="{StaticResource DataTemplate1}" ItemsSource="{Binding Session.SessionSpeakers}" Margin="0,10" />
+					<ListBox ItemContainerStyle="{StaticResource ListBoxItemStyle1}" ItemTemplate="{StaticResource DataTemplate1}" ItemsSource="{Binding Session.SessionSpeakers}" Margin="0,10" SelectionChanged="ListBox_SelectionChanged" />
 				</StackPanel>
 			</Border>
 			<ScrollViewer Margin="20,10" Padding="0,0,0,30" VerticalContentAlignment="Top" HorizontalContentAlignment="Stretch" Grid.Row="1">

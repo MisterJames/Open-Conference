@@ -5,6 +5,7 @@ using Prdc.Conference.Model;
 using System.IO.IsolatedStorage;
 using System;
 using Microsoft.Phone.Tasks;
+using System.Windows.Controls;
 
 namespace Prdc.Conference
 {
@@ -41,7 +42,7 @@ namespace Prdc.Conference
 
             // go show the goods
             string parameter = "savedPivotItem";
-            NavigationService.Navigate(new Uri(string.Format("/SessionsPage.xaml?parameter={0}", parameter), UriKind.Relative));
+            NavigationService.Navigate(new Uri(string.Format("/Views/SessionsPage.xaml?parameter={0}", parameter), UriKind.Relative));
         }
 
         private void shareButton_Click(object sender, EventArgs e)
@@ -52,6 +53,25 @@ namespace Prdc.Conference
             email.Subject = "Check out this session at PrDC";
             email.Body = string.Format("Hey, thought you might like to check out '{0}'. Visit http://www.prairiedevcon.com/sessions to see all the info.", vm.Session.Title);
             email.Show();
+        }
+
+        private void ListBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                SessionSpeakers ss = e.AddedItems[0] as SessionSpeakers;
+
+                if (ss != null)
+                {
+                    Speaker speaker = ss.Speaker;
+                    SpeakerViewModel vm = this.DataContext as SpeakerViewModel;
+                    vm.SendSpeakerNavigatingMessage(speaker);
+                    ListBox listbox = sender as ListBox;
+                    listbox.SelectedIndex = -1;
+                }
+
+                NavigationService.Navigate(new System.Uri("/Views/SpeakerPage.xaml", System.UriKind.Relative));
+            }
         }
 
 

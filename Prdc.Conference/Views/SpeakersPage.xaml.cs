@@ -39,7 +39,7 @@ namespace Prdc.Conference
                     listbox.SelectedIndex = -1;
                 }
 
-                NavigationService.Navigate(new System.Uri("/SessionPage.xaml", System.UriKind.Relative));
+                NavigationService.Navigate(new System.Uri("/Views/SessionPage.xaml", System.UriKind.Relative));
             }
 
         }
@@ -58,7 +58,7 @@ namespace Prdc.Conference
                     listbox.SelectedIndex = -1;
                 }
 
-                NavigationService.Navigate(new System.Uri("/SpeakerPage.xaml", System.UriKind.Relative));
+                NavigationService.Navigate(new System.Uri("/Views/SpeakerPage.xaml", System.UriKind.Relative));
             }
             
         }

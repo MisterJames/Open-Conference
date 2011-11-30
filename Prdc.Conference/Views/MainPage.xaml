@@ -41,10 +41,10 @@
 		<!--ContentPanel - place additional content here-->
 		<Grid x:Name="ContentGrid"
 		      Grid.Row="1">
-			<toolkit:HubTile Title="Venue" Source="images\venue.png" Message="Viscount Gort" HorizontalAlignment="Left" Margin="24,26,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" Tap="HubTile_Tap" />
-            <toolkit:HubTile HorizontalAlignment="Left" Margin="223,26,0,0" Message="See the speaker list" Source="images\speakers.png" Title="Speakers" VerticalAlignment="Top" Tap="HubTile_Tap_2" />
-            <toolkit:HubTile HorizontalAlignment="Left" Margin="24,225,0,0" Message="Learn about the sessions" Source="images\sessions.png" Title="Sessions" VerticalAlignment="Top" Tap="HubTile_Tap_1" />
-            <toolkit:HubTile HorizontalAlignment="Left" Margin="223,225,0,0" Message="PrDC is Trending" Source="images\twitter.png" Title="Tweets" VerticalAlignment="Top" Tap="HubTile_Tap_3" />
+			<toolkit:HubTile Title="Venue" Source="..\images\venue.png" Message="Viscount Gort" HorizontalAlignment="Left" Margin="24,26,0,0" VerticalAlignment="Top" d:LayoutOverrides="Width, Height" Tap="HubTile_Tap" />
+            <toolkit:HubTile HorizontalAlignment="Left" Margin="223,26,0,0" Message="See the speaker list" Source="..\images\speakers.png" Title="Speakers" VerticalAlignment="Top" Tap="HubTile_Tap_2" />
+            <toolkit:HubTile HorizontalAlignment="Left" Margin="24,225,0,0" Message="Learn about the sessions" Source="..\images\sessions.png" Title="Sessions" VerticalAlignment="Top" Tap="HubTile_Tap_1" />
+            <toolkit:HubTile HorizontalAlignment="Left" Margin="223,225,0,0" Message="PrDC is Trending" Source="..\images\twitter.png" Title="Tweets" VerticalAlignment="Top" Tap="HubTile_Tap_3" />
         </Grid>
 	</Grid>
     

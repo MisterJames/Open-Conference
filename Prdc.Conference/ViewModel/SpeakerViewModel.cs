@@ -68,5 +68,10 @@ namespace Prdc.Conference.ViewModel
         {
             Messenger.Default.Send<SessionSelectionChangedMessage>(new SessionSelectionChangedMessage { Session = session });
         }
+
+        internal void SendSpeakerNavigatingMessage(Speaker speaker)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -44,25 +44,25 @@ namespace Prdc.Conference
 
         private void btnRefresh_Click(object sender, System.EventArgs e)
         {
-            NavigationService.Navigate(new System.Uri("/DataRefreshPage.xaml", System.UriKind.Relative));
+            NavigationService.Navigate(new System.Uri("/Views/DataRefreshPage.xaml", System.UriKind.Relative));
 
         }
 
         private void HubTile_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new System.Uri("/VenuePage.xaml", System.UriKind.Relative));
+            NavigationService.Navigate(new System.Uri("/Views/VenuePage.xaml", System.UriKind.Relative));
             
         }
 
         private void HubTile_Tap_1(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new System.Uri("/SessionsPage.xaml", System.UriKind.Relative));
+            NavigationService.Navigate(new System.Uri("/Views/SessionsPage.xaml", System.UriKind.RelativeOrAbsolute));
 
         }
 
         private void HubTile_Tap_2(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new System.Uri("/SpeakersPage.xaml", System.UriKind.Relative));
+            NavigationService.Navigate(new System.Uri("/Views/SpeakersPage.xaml", System.UriKind.Relative));
         }
 
         private void HubTile_Tap_3(object sender, System.Windows.Input.GestureEventArgs e)

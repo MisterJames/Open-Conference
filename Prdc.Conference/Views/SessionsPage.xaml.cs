@@ -53,7 +53,7 @@ namespace Prdc.Conference
                 }
                 ListBox listbox = sender as ListBox;
                 listbox.SelectedIndex = -1;
-                NavigationService.Navigate(new System.Uri("/SessionPage.xaml", System.UriKind.Relative));
+                NavigationService.Navigate(new System.Uri("/Views/SessionPage.xaml", System.UriKind.Relative));
             }
         }
 
@@ -71,13 +71,13 @@ namespace Prdc.Conference
                 }
                 ListBox listbox = sender as ListBox;
                 listbox.SelectedIndex = -1;
-                NavigationService.Navigate(new System.Uri("/SessionPage.xaml", System.UriKind.Relative));
+                NavigationService.Navigate(new System.Uri("/Views/SessionPage.xaml", System.UriKind.Relative));
             }
         }
 
         private void btnHome_Click(object sender, System.EventArgs e)
         {
-            NavigationService.Navigate(new System.Uri("/MainPage.xaml", System.UriKind.Relative));
+            NavigationService.Navigate(new System.Uri("/Views/MainPage.xaml", System.UriKind.Relative));
         }
 
         private void btnClear_Click(object sender, System.EventArgs e)
