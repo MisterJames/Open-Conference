@@ -35,7 +35,7 @@ namespace Prdc.Conference
                 var result = MessageBox.Show("There is no data in the application. Can we go fetch the conference information?", "Whoa!", MessageBoxButton.OKCancel);
                 if (result == MessageBoxResult.OK)
                 {
-                    NavigationService.Navigate(new System.Uri("/DataRefreshPage.xaml", System.UriKind.Relative));
+                    NavigationService.Navigate(new System.Uri("/Views/DataRefreshPage.xaml", System.UriKind.Relative));
                 }
             }
 

@@ -84,15 +84,7 @@
 		</StackPanel>
 
 		<Grid x:Name="ContentGrid"
-		      Grid.Row="1">
-
-			<TextBlock Text="{Binding Welcome}"
-			           Style="{StaticResource PhoneTextNormalStyle}"
-			           HorizontalAlignment="Center"
-			           VerticalAlignment="Center"
-			           FontSize="40" />
-
-		</Grid>
+		      Grid.Row="1"/>
 		<ListBox Margin="8,8,0,0" Grid.Row="1" ItemsSource="{Binding Speakers}" ItemTemplate="{StaticResource SpeakerItemTemplate}" SelectionChanged="SpeakerListSelectionChanged" />
 	</Grid>
     

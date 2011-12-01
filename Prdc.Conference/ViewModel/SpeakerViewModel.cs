@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using Prdc.Conference.Model;
 using GalaSoft.MvvmLight.Messaging;
+using System;
 
 namespace Prdc.Conference.ViewModel
 {
@@ -29,6 +30,40 @@ namespace Prdc.Conference.ViewModel
                     Twitter = "@CanadianJames",
                     Picture = new System.Uri(@"images\speakers.png", System.UriKind.Relative).ToString()
                 };
+                this.Speaker.SessionSpeakers = new System.Data.Linq.EntitySet<SessionSpeakers>();
+                this.Speaker.SessionSpeakers.Add(new SessionSpeakers
+                {
+                    Speaker = this.Speaker,
+                    Session = new Session
+                    {
+                        Abstract = "In this session you will find that there are things that you can do.",
+                        Title = "Session of Awesome",
+                        Start = new DateTime(2012,2,1,10,0,0),
+                        Room = "Wooty Froo Froo Ballroom"
+                    }
+                });
+
+                this.Speaker.SessionSpeakers.Add(new SessionSpeakers
+                {
+                    Speaker = this.Speaker,
+                    Session = new Session
+                    {
+                        Abstract = "Things that make you go, oh-yeah.",
+                        Title = "The Mega Oh-Yeah Session",
+                        Start = new DateTime(2012, 2, 2, 14, 0, 0),
+                        Room = "Salle de Classe A"
+                    }
+                });
+                this.Speaker.SessionSpeakers.Add(new SessionSpeakers
+                {
+                    Speaker = this.Speaker,
+                    Session = new Session
+                    {
+                        Abstract = "Read all about it.",
+                        Title = "Chronicles of Foo",
+                        Room = "Salle de Classe A"
+                    }
+                });
 
             }
             //else

@@ -89,5 +89,10 @@ namespace Prdc.Conference.ViewModel
 
         ////    base.Cleanup();
         ////}
+
+        internal void SendSpeakerNavigatingMessage(Speaker speaker)
+        {
+            Messenger.Default.Send<SpeakerSelectionChangedMessage>(new SpeakerSelectionChangedMessage { Speaker = speaker });
+        }
     }
 }
