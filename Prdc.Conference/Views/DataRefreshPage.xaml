@@ -20,7 +20,7 @@
             <RowDefinition Height="Auto" MinHeight="260"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-    	<Image Margin="0,0,0,-32" Source="Images/backdrop.png" Stretch="Fill" Grid.RowSpan="2"/>
+    	<Image Margin="0,0,0,-32" Source="../Images/backdrop.png" Stretch="Fill" Grid.RowSpan="2"/>
     	<TextBlock x:Name="txtSpeaker" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Getting ready to load speakers..." VerticalAlignment="Top" Margin="37,29,0,0" Grid.Row="1"/>
     	<TextBlock HorizontalAlignment="Left" Margin="37,71,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Getting ready to load sessions..." VerticalAlignment="Top" Name="txtSession" />
     	<toolkit:PerformanceProgressBar Height="67" VerticalAlignment="Bottom" />

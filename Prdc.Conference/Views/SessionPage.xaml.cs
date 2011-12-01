@@ -64,7 +64,7 @@ namespace Prdc.Conference
                 if (ss != null)
                 {
                     Speaker speaker = ss.Speaker;
-                    SpeakerViewModel vm = this.DataContext as SpeakerViewModel;
+                    SessionViewModel vm = this.DataContext as SessionViewModel;
                     vm.SendSpeakerNavigatingMessage(speaker);
                     ListBox listbox = sender as ListBox;
                     listbox.SelectedIndex = -1;
