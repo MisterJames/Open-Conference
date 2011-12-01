@@ -19,7 +19,7 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace Prdc.Conference.Model
 {
-    public class CacheManager
+    public class CacheManager : ICacheManager
     {
         WebClient _client = null;
 
@@ -112,7 +112,7 @@ namespace Prdc.Conference.Model
             }
         }
 
-        public bool UpdateCachedSpeakers()
+        private bool UpdateCachedSpeakers()
         {
             bool result = false;
 
@@ -169,7 +169,7 @@ namespace Prdc.Conference.Model
                 ReportSpeakerProgress("Saving to device...", 85);
                 var speakerlist = speakers.Select(s => new Speaker
                 {
-                    Bio = CleanHtmlValueConverter.Convert(s.bio),
+                    Bio = s.bio,
                     Blog = s.blog,
                     CreatedAt = s.created_at,
                     Email = s.email,
@@ -209,7 +209,7 @@ namespace Prdc.Conference.Model
             ReportSpeakerProgress(string.Format("Speakers downloaded {0}%", e.ProgressPercentage), e.ProgressPercentage);
         }
 
-        public void UpdateCachedSessions()
+        private void UpdateCachedSessions()
         {
             // get json from server
             _client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(SessionDownloadStringCompleted);
