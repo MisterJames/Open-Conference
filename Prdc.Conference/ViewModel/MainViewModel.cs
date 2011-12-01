@@ -1,14 +1,15 @@
 ﻿using GalaSoft.MvvmLight;
 using Prdc.Conference.Model;
 using System;
+using Ninject;
 
 namespace Prdc.Conference.ViewModel
 {
 
     public class MainViewModel : ViewModelBase
     {
-
-        CacheManager _cache = new CacheManager();
+        private static StandardKernel _kernel = null;
+        ICacheManager _cache = null;
 
         public string ApplicationTitle
         {
@@ -130,6 +131,11 @@ namespace Prdc.Conference.ViewModel
             {
                 // Code runs "for real"
             }
+
+            _kernel = new StandardKernel(new LegacyCacheModule());
+            _cache = _kernel.Get<ICacheManager>();
+            
+
         }
 
         ////public override void Cleanup()

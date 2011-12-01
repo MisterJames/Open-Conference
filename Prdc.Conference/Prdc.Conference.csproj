@@ -64,8 +64,12 @@
     </Reference>
     <Reference Include="Microsoft.Phone.Interop" />
     <Reference Include="mscorlib.Extensions" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.0.3\lib\sl3-wp\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=4.0.4.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.0.4\lib\sl3-wp\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.2.2.1.4\lib\sl3-wp\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Device" />
@@ -86,6 +90,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\CacheModules.cs" />
+    <Compile Include="Model\ConferenceDataManager.cs" />
+    <Compile Include="Model\ICacheManager.cs" />
     <Compile Include="Views\DataRefreshPage.xaml.cs">
       <DependentUpon>DataRefreshPage.xaml</DependentUpon>
     </Compile>
@@ -94,7 +101,6 @@
     </Compile>
     <Compile Include="Model\CacheManager.cs" />
     <Compile Include="Model\CacheUpdateEventArgs.cs" />
-    <Compile Include="Model\CleanHtmlValueConverter.cs" />
     <Compile Include="Model\ConferenceDataContext.cs" />
     <Compile Include="Model\ProgressEventArgs.cs" />
     <Compile Include="Model\Session.cs" />

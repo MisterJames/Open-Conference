@@ -11,19 +11,23 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Prdc.Conference.Model;
+using Ninject;
 
 namespace Prdc.Conference
 {
     public partial class DataRefresh : PhoneApplicationPage
     {
+        private static StandardKernel _kernel = null;
+
         public DataRefresh()
         {
             InitializeComponent();
+            _kernel = new StandardKernel(new LegacyCacheModule());
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-            CacheManager manager = new CacheManager();
+            ICacheManager manager = _kernel.Get<ICacheManager>();
             manager.SessionProgressReported += new EventHandler<ProgressEventArgs>(manager_SessionProgressReported);
             manager.SpeakersProgressReported += new EventHandler<ProgressEventArgs>(manager_SpeakersProgressReported);
             manager.OnRefreshCompleted += new EventHandler<CacheUpdateEventArgs>(manager_OnRefreshCompleted);
