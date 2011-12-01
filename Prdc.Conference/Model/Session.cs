@@ -32,12 +32,25 @@ namespace Prdc.Conference.Model
         [Column]
         public string Room { get; set; }
 
+
         [Association(OtherKey = "SessionId", ThisKey = "SessionId")]
         public EntitySet<SessionSpeakers> SessionSpeakers { get; set; }
 
         [Association(OtherKey = "SessionId", ThisKey = "SessionId")]
         public EntitySet<SessionTags> SessionTags { get; set; }
 
+        public string StartTimeText
+        {
+            get
+            {
+                string result = "not scheduled yet";
+                if (this.Start.HasValue)
+                {
+                    result=string.Format("{0:ddd d h:mm}", this.Start.Value); 
+                }
+                return result;
+            }
+        }
 
         public string GetSpeakers
         {
